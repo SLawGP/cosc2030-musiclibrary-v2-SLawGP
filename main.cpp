@@ -56,7 +56,81 @@ public:
 }; 
 
 class Song {
-};
+private:
+    string title;
+    Artist artist;
+    string album;
+    int duration; // in seconds
+    string genre;
+    string releaseDate;
+
+public:
+    Song(string t, Artist a, string al, int d, string g, string r) : title(t), artist(a), album(al), duration(d), genre(g), releaseDate(r) {
+    }
+
+    // Getters
+    string getTitle() {
+        return title;
+    }
+
+    Artist getArtist() {
+        return artist;
+    }
+
+    string getAlbum() {
+        return album;
+    }
+
+    int getDuration() {
+        return duration;
+    }
+
+    string getGenre() {
+        return genre;
+    }
+
+    string getReleaseDate() {
+        return releaseDate;
+    }
+
+    // Setters
+    void setTitle(string t) {
+        title = t;
+    }
+
+    void setArtist(Artist a) {
+        artist = a;
+    }
+
+    void setAlbum(string al) {
+        album = al;
+    }
+
+    void setDuration(int d) {
+        duration = d;
+    }
+
+    void setGenre(string g) {
+        genre = g;
+    }
+
+    void setReleaseDate(string r) {
+        releaseDate = r;
+    }
+
+    // Display Info
+    void display() {
+        cout << "Song Title: " << title << endl;
+
+        cout << "\nArtist Information:" << endl;
+        artist.display();
+        
+        cout << "Album: " << album << endl;
+        cout << "Duration: " << duration << " seconds" << endl;
+        cout << "Genre: " << genre << endl;
+        cout << "Release Date: " << releaseDate << endl;
+    }
+}; 
 
 int main() {
     // Create instance of Artist object 
