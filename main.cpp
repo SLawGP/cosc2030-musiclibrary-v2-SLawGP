@@ -134,10 +134,13 @@ public:
 
 int main() {
     // Create instance of Artist object 
+    Artist artist("Ado", "J-Pop", 2017, "Japan");
 
     // Create instance of Song object
+    Song song("Usseewa", artist, "Usseewa", 206, "J-Pop", "2020-10-23");
 
     // Call song instance display function 
+    song.display();
 
     return 0; 
 }
