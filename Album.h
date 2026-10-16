@@ -16,11 +16,11 @@ protected:
     vector<Song> songs;
 
 public:
-    Album(string t, Artist a, int ry) : title(t), artist(a), releaseYear(ry) {}
+    Album(string t, Artist a, int ry);
     // Copy Constructor
-    Album(const Album& other) : title(other.title), artist(other.artist), releaseYear(other.releaseYear), songs(other.songs) {}
+    Album(const Album& other);
     // Destructor
-    virtual ~Album() {}
+    virtual ~Album();
 
     // Getters
     string getTitle();

@@ -14,7 +14,7 @@ private:
     string country;
 
 public:
-    Artist(string n, string g, int y, string c) : name(n), genre(g), yearFormed(y), country(c) {}
+    Artist(string n, string g, int y, string c);
 
     string getName() const;
     string getGenre();

@@ -16,7 +16,7 @@ private:
     string releaseDate; // in format YYYY-MM-DD
 
 public:
-    Song(string t, Artist a, string al, int d, string g, string r) : title(t), artist(a), album(al), duration(d), genre(g), releaseDate(r) {}
+    Song(string t, Artist a, string al, int d, string g, string r);
 
     // Getters
     string getTitle() const;
