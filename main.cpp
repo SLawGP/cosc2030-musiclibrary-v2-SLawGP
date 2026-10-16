@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -131,6 +132,61 @@ public:
         cout << "Release Date: " << releaseDate << endl;
     }
 }; 
+
+class Album {
+protected:
+    string title;
+    Artist artist;
+    int releaseYear;
+    vector<Song> songs;
+
+public:
+    Album(string t, Artist a, int ry) : title(t), artist(a), releaseYear(ry) {}
+
+    // Constructor
+    Album(const Album& other) : title(other.title), artist(other.artist), releaseYear(other.releaseYear), songs(other.songs) {}
+
+    // Destructor
+    virtual ~Album() {}
+
+    // Getters
+    string getTitle() {
+        return title;
+    }
+
+    Artist getArtist() {
+        return artist;
+    }
+
+    int getReleaseYear() {
+        return releaseYear;
+    }
+
+    vector<Song> getSongs() {
+        return songs;
+    }
+
+    // Setters
+    void setTitle(string t) {
+        title = t;
+    }
+
+    void setArtist(Artist a) {
+        artist = a;
+    }
+
+    void setReleaseYear(int ry) {
+        releaseYear = ry;
+    }
+
+    void addSong(Song s) {
+        songs.push_back(s);
+    }
+
+    // Pure virtual function to be implemented by derived classes
+    virtual void display() = 0;
+};
+
 
 int main() {
     // Create instance of Artist object 
