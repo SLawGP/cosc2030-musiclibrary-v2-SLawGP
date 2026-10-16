@@ -251,6 +251,13 @@ public:
             cout << "- " << song.getTitle() << " by " << song.getArtist().getName() << endl;
         }
     }
+    // Friend Function
+    friend void displayListeningHistory(const ListeningHistory& lh) {
+        cout << "Listening History (Friend Function):" << endl;
+        for (const auto& song : lh.history) {
+            cout << "- " << song.getTitle() << " by " << song.getArtist().getName() << endl;
+        }
+    }
 };
 
 int main() {
@@ -280,6 +287,9 @@ int main() {
 
     // Display Listening History
     history.display();
+
+    // Friend function to display listening history
+    displayListeningHistory(history);
 
     return 0; 
 }
