@@ -14,7 +14,7 @@ private:
 public:
     Artist(string n, string g, int y, string c) : name(n), genre(g), yearFormed(y), country(c) {}
 
-    string getName() {
+    string getName() const {
         return name;
     }
 
@@ -70,11 +70,11 @@ public:
     }
 
     // Getters
-    string getTitle() {
+    string getTitle() const {
         return title;
     }
 
-    Artist getArtist() {
+    Artist getArtist() const {
         return artist;
     }
 
@@ -260,8 +260,26 @@ int main() {
     // Create instance of Song object
     Song song("Usseewa", artist, "Usseewa", 206, "J-Pop", "2020-10-23");
 
-    // Call song instance display function 
+    // Display Song information
     song.display();
+
+    // Create instance of StudioAlbum object
+    StudioAlbum album("Usseewa", artist, 2020, "Virgin Music");
+
+    // Add song to album
+    album.addSong(song);
+
+    // Display Album information
+    album.display();
+
+    // Create instance of ListeningHistory object
+    ListeningHistory history;
+
+    // Add song to listening history
+    history.addSong(song);
+
+    // Display Listening History
+    history.display();
 
     return 0; 
 }
