@@ -225,6 +225,34 @@ public:
     }
 };
 
+class ListeningHistory {
+private:
+    vector<Song> history;
+
+public:
+    // Constructor
+    ListeningHistory() {}
+
+    // Copy Constructor
+    ListeningHistory(const ListeningHistory& other) : history(other.history) {}
+
+    // Destructor
+    ~ListeningHistory() {}
+
+    // Add Song to history
+    void addSong(Song s) {
+        history.push_back(s);
+    }
+
+    // Display Listening History
+    void display() {
+        cout << "Listening History:" << endl;
+        for (const auto& song : history) {
+            cout << "- " << song.getTitle() << " by " << song.getArtist().getName() << endl;
+        }
+    }
+};
+
 int main() {
     // Create instance of Artist object 
     Artist artist("Ado", "J-Pop", 2017, "Japan");
