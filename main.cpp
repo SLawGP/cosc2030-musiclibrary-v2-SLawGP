@@ -187,6 +187,43 @@ public:
     virtual void display() = 0;
 };
 
+class StudioAlbum : public Album {
+private:
+    string studioName;
+
+public:
+    // Constructor
+    StudioAlbum(string t, Artist a, int ry, string sn) : Album(t, a, ry), studioName(sn) {}
+
+    // Copy Constructor
+    StudioAlbum(const StudioAlbum& other) : Album(other), studioName(other.studioName) {}
+
+    // Destructor
+    ~StudioAlbum() override {}
+
+    // Getter
+    string getStudioName() {
+        return studioName;
+    }
+
+    // Setter
+    void setStudioName(string sn) {
+        studioName = sn;
+    }
+
+    // Display Info
+    void display() override {
+        cout << "Studio Album Title: " << title << endl;
+        cout << "\nArtist Information:" << endl;
+        artist.display();
+        cout << "Release Year: " << releaseYear << endl;
+        cout << "Studio Name: " << studioName << endl;
+        cout << "Songs in the Album:" << endl;
+        for (const auto& song : songs) {
+            cout << "- " << song.getTitle() << endl;
+        }
+    }
+};
 
 int main() {
     // Create instance of Artist object 
